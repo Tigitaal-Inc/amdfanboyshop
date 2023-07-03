@@ -1,5 +1,26 @@
+<!DOCTYPE html>
 <html>
   <body>
     W.I.P.
+    <p id="domain_extension">You are visiting the Tigitaal Global website</p>
+    <button id="takemeto">Take me to the Dutch version of Tigitaal</button>
+    <script>
+      const url = window.location.href;
+      var visiting = "Global";
+      var domain_extension = document.getElementById("domain_extension");
+      var takemeto = document.getElementById("takemeto");
+
+      if (url.startsWith("http://www.amdfanboyshop.com") || url.startsWith("https://www.amdfanboyshop.com") || url.startsWith("http://amdfanboyshop.com") || url.startsWith("https://amdfanboyshop.com")) {
+        visiting = "Global";
+        domain_extension.innerHTML = "You are visiting the Tigitaal Global website";
+        takemeto.innerHTML = "Take me to the Dutch version of Tigitaal";
+        takemeto.href = "https://amdfanboyshop.nl";
+      } else if (url.startsWith("http://www.amdfanboyshop.nl") || url.startsWith("https://www.amdfanboyshop.nl") || url.startsWith("http://amdfanboyshop.nl") || url.startsWith("https://amdfanboyshop.nl")) {
+        visiting = "Netherlands";
+        domain_extension.innerHTML = "Je bezoekt de Nederlandse website voor Tigitaal";
+        takemeto.innerHTML = "Take me to Tigitaal Global";
+        takemeto.href = "https://amdfanboyshop.com";
+      }
+    </script>
   </body>
 </html>
